@@ -71,6 +71,8 @@
 # pkg install -f libinput
 # pkg install -f mesa-libs
 # pkg install -f libmtdev
+# pkg install -f llvm15
+# pkg install -f libevdev
 
 
 Failed loadModule glx

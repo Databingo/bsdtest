@@ -74,13 +74,3 @@
 # pkg install -f llvm15
 # pkg install -f libevdev
 
-
-Failed loadModule glx
-Failed libGL.so.1
-Failed libglx.so
-Failed loadModule modesetting
-Failed libgbm.so.1 modesetting_drv.so
-Failed loadModule scfb
-Failed vesa
-no drivers available
-

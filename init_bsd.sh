@@ -69,6 +69,8 @@
 # pkg install -f xcb-util
 # pkg install -f libepoll-shim
 # pkg install -f libinput
+# pkg install -f mesa-libs
+# pkg install -f libmtdev
 
 
 Failed loadModule glx

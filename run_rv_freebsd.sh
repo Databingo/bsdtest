@@ -18,9 +18,9 @@ qemu-system-riscv64 \
   -m 2048M \
   -smp 2 \
   -nographic \
-  -bios /Users/chengang/Downloads/opensbi-1.5.1-rv-bin/share/opensbi/lp64/generic/firmware/fw_dynamic.bin \
+  -bios opensbi-1.5.1-rv-bin/share/opensbi/lp64/generic/firmware/fw_jump.bin \
   -kernel u-boot.bin \
-  -drive file=/Users/chengang/Downloads/FreeBSD-15.0-CURRENT-riscv-riscv64-zfs-20241115-79af8f72b3af-273651.qcow2,format=qcow2,id=hd0 \
+  -drive file=FreeBSD-15.0-CURRENT-riscv-riscv64-zfs-20241115-79af8f72b3af-273651.qcow2,format=qcow2,id=hd0 \
   -device virtio-blk-pci,drive=hd0 \
  #-nographic
  #-bios riscv64-lp64d--glibc--bleeding-edge-2024.05-1-fw_jump.elf \

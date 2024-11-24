@@ -19,6 +19,7 @@
 
 # shutdown -p now # for power off
 
+# for xorg
 # pkg install xorg 
 # pkg install xfce 
 # pkg install -f xinit

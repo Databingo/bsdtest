@@ -73,4 +73,5 @@
 # pkg install -f libmtdev
 # pkg install -f llvm15
 # pkg install -f libevdev
+# pkg install -f zstd
 

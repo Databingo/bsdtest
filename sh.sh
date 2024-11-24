@@ -120,6 +120,13 @@
 # growfs /dev/vtbd0p4 # for ufs
 # service growfs onestart
 # zpool online -e root /dev/vtbd0p4 # for zfs
+# /etc/rc.d/sshd sshd_enable=YES
+# /etc/ssh/sshd_config RootLogin yes
+# /etc/rc.d/sshd onestart
+# su -
+# passwd
+# ssh -p2222 root@127.0.0.1
+# scp -P 5555 root@127.0.0.1:/file .
 
 # for freebsd
 qemu-system-x86_64 -d strace \
@@ -134,8 +141,8 @@ qemu-system-x86_64 -d strace \
   -device virtio-net,netdev=vmnic \
   -drive file=new10G.img,id=new10G,format=qcow2,if=none \
   -device virtio-blk-pci,drive=new10G \
-  -vga std \
-  -display cocoa \
+ #-vga std \
+ #-display cocoa \
  #-accel hvf \
  #-cpu host \
  #-device usb-host,vendorid=05dc,productid=a81d

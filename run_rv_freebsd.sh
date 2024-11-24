@@ -22,6 +22,8 @@ qemu-system-riscv64 \
   -kernel u-boot.bin \
   -drive file=FreeBSD-15.0-CURRENT-riscv-riscv64-zfs-20241115-79af8f72b3af-273651.qcow2,format=qcow2,id=hd0 \
   -device virtio-blk-pci,drive=hd0 \
+  -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777,hostfwd=tcp::7778-:7778 \
+  -device virtio-net-device,netdev=net0 \
  #-nographic
  #-bios riscv64-lp64d--glibc--bleeding-edge-2024.05-1-fw_jump.elf \
  #-monitor stdio \

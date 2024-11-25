@@ -129,18 +129,25 @@
 # scp -P 5555 root@127.0.0.1:/file .
 
 # for freebsd
-qemu-system-x86_64 -d strace \
-  -monitor stdio \
-  -M pc \
+# optimized cpu speed for local develop in target architecture OS
+# login: ssh root@127.0.0.1 -p 2222
+qemu-system-x86_64  \
+  -cpu host,pmu=off \
+  -accel hvf \
+  -smp 4 \
   -m 3G \
-  -cpu qemu64 \
-  -smp cores=4 \
-  -drive file=FreeBSD-14.1-RELEASE-amd64.qcow2,id=hd0,if=none \
+  -drive file=FreeBSD-14.1-RELEASE-amd64.qcow2,id=hd0,if=none,cache=none \
   -device virtio-blk-pci,drive=hd0 \
-  -netdev user,id=vmnic,hostfwd=tcp::2222-:22,hostfwd=tcp::7777-:7777,hostfwd=tcp::7778-:7778 \
-  -device virtio-net,netdev=vmnic \
+  -netdev user,id=vmnic,hostfwd=tcp::2222-:22,hostfwd=tcp::7775-:7775,hostfwd=tcp::7776-:7776 \
+  -device virtio-net-pci,netdev=vmnic \
   -drive file=new10G.img,id=new10G,format=qcow2,if=none \
   -device virtio-blk-pci,drive=new10G \
+  -nographic \
+  -monitor none &
+ #-serial mon:stdio \
+ #-curses \
+ #-d strace \
+ #-nographic \
  #-vga std \
  #-display cocoa \
  #-accel hvf \

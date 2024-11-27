@@ -22,28 +22,44 @@ echo '
  }' > /usr/local/etc/pkg/repos/FreeBSD.conf
 # or
 # static
-fetch http://lonesome.com/FreeBSD/FreeBSD:14:riscv64/latest/Latest/pkg.txz
-tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
-mv pkg-static /usr/local/projects/bin/
+#fetch http://lonesome.com/FreeBSD/FreeBSD:13:riscv64/latest/Latest/pkg.txz
+#tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
+#mv pkg-static /usr/local/projects/bin/
 # create /usr/local/etc/pkg.conf:
 # ABI = "FreeBSD:13:riscv64"
 # or add in ~/.shrc and run . ~/.shrc :
-echo "alias pkg='/usr/local/projects/bin/pkg-static'" >> ~/.shrc
+#echo "alias pkg='/usr/local/projects/bin/pkg-static'" >> ~/.shrc
 
 #echo "export http_proxy=http://10.0.2.15:7890" >> ~/.shrc
 #echo "export https_proxy=https://10.0.2.15:7890" >> ~/.shrc
 #echo "export all_proxy=socks5://10.0.2.15:7890" >> ~/.shrc
 
-. ~/.shrc
+#. ~/.shrc
+
+#pkg install tmux
+#pkg install git
 
 # bigger
+# !raw extend before the first time boot will automatically exteng file system
 # qemu-img resize *.qcow2 +19G
 # qemu-img info *.qcow2
 # gpart show
 # gpart recover vtbd0 # becasue resize hurt part record
-# gpart resize -i 4 -s 20G -a 4k vtbd0 # 4 is the partitaion
+# gpart resize -i 3 -s 20G -a 4k vtbd0 # 4 is the partitaion
+# ufs:
 # growfs /dev/vtbd0p4 # for ufs
 # if not work: growfs /dev/rootfs 
 # service growfs onestart
-# zpool online -e root /dev/vtbd0p4 # for zfs
+# zfs:
+# zpool stauts
+# zpool online -e zroot /dev/vtbd0p3 # for zfs
+# zpool list
+
+# raw 
+#truncate -s 20G FreeBSD*.raw
+#first boot fs will grow
+#also can same as qcow2
+
+
+
 

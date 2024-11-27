@@ -17,7 +17,7 @@ qemu-system-riscv64 \
   -kernel u-boot.bin \
   -drive file=FreeBSD-14.1-RELEASE-riscv-riscv64-zfs.qcow2,format=qcow2,id=hd0 \
   -device virtio-blk-pci,drive=hd0 \
-  -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777,guestfwd=tcp:10.0.2.100:7890-tcp:127.0.0.1:7890 \
+  -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777,guestfwd=tcp:10.0.2.15:7890-tcp:127.0.0.1:7890 \
   -device virtio-net-device,netdev=net0 \
   -nographic \
  #-monitor none &

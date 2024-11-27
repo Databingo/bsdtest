@@ -1,4 +1,5 @@
-mkdir /usr/local/projects
+mkdir -p /usr/local/projects/bin
+
 # pkg for riscv64
 mkdir -p  /usr/local/etc/pkg/repos
 touch /usr/local/etc/pkg/repos/lonesome.com.conf
@@ -21,12 +22,14 @@ echo '
  }' > /usr/local/etc/pkg/repos/FreeBSD.conf
 # or
 # static
-# fetch http://lonesome.com/FreeBSD/FreeBSD:13:riscv64/latest/Latest/pkg.txz
-# tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
+fetch http://lonesome.com/FreeBSD/FreeBSD:14:riscv64/latest/Latest/pkg.txz
+tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
+mv pkg-static /usr/local/projects/bin/
 # create /usr/local/etc/pkg.conf:
 # ABI = "FreeBSD:13:riscv64"
 # or add in ~/.shrc and run . ~/.shrc :
-# alias pkg='/usr/local/projects/bin/pkg-static -o ABI=FreeBSD:13:riscv64'
+echo "alias pkg='/usr/local/projects/bin/pkg-static'" >> ~/.shrc
+. ~/.shrc
 
 
 # bigger

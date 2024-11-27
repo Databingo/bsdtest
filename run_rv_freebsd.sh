@@ -1,5 +1,6 @@
-# toolchains.bootlin.com/downloads
+# toolchains.bootlin.com/downloads for minimal linux
 
+#ssh -p3322 root@127.0.0.1
 qemu-system-riscv64 \
   -machine virt \
   -m 2048M \

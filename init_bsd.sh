@@ -29,8 +29,12 @@ mv pkg-static /usr/local/projects/bin/
 # ABI = "FreeBSD:13:riscv64"
 # or add in ~/.shrc and run . ~/.shrc :
 echo "alias pkg='/usr/local/projects/bin/pkg-static'" >> ~/.shrc
-. ~/.shrc
 
+#echo "export http_proxy=http://10.0.2.15:7890" >> ~/.shrc
+#echo "export https_proxy=https://10.0.2.15:7890" >> ~/.shrc
+#echo "export all_proxy=socks5://10.0.2.15:7890" >> ~/.shrc
+
+. ~/.shrc
 
 # bigger
 # qemu-img resize *.qcow2 +19G

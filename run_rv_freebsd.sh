@@ -54,9 +54,17 @@ qemu-system-riscv64 \
 # qemu-img info *.qcow2
 # gpart show
 # gpart recover vtbd0 # becasue resize hurt part record
-# gpart resize -i 4 -s 20G -a 4k vtbd0 # 4 is the partitaion
+# gpart resize -i 3 -s 20G -a 4k vtbd0 # 4 is the partitaion
+# ufs:
 # growfs /dev/vtbd0p4 # for ufs
 # if not work: growfs /dev/rootfs 
 # service growfs onestart
-# zpool online -e root /dev/vtbd0p4 # for zfs
+# zfs:
+# zpool stauts
+# zpool online -e zroot /dev/vtbd0p3 # for zfs
+# zpool list
+
+# raw 
+#truncate -s 20G FreeBSD*.raw
+#first boot fs will grow
 

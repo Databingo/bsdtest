@@ -1,5 +1,11 @@
 # toolchains.bootlin.com/downloads for minimal linux
 
+# download.freebsd.org/releases
+# 14 have riscv64 version
+# 14 have zfs version
+# 14 pkg have some unoffical support 
+# so 14.1 release
+
 #ssh -p3322 root@127.0.0.1
 qemu-system-riscv64 \
   -machine virt \

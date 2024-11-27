@@ -45,7 +45,7 @@ echo '
 # qemu-img info *.qcow2
 # gpart show
 # gpart recover vtbd0 # becasue resize hurt part record
-# gpart resize -i 3 -s 20G -a 4k vtbd0 # 4 is the partitaion
+# gpart resize -i 3 -s 20G -a 4k vtbd0 # 3 is the partitaion
 # ufs:
 # growfs /dev/vtbd0p4 # for ufs
 # if not work: growfs /dev/rootfs 

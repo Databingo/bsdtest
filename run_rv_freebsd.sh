@@ -7,6 +7,7 @@
 # so 14.1 release
 # libssl.so.111 libcyrpto.so.111 miss for git
 # so use 13.3
+# 13.3 pkg boot ok
 
 # ssh -p3322 root@127.0.0.1
 # scp -P 3322 root@127.0.0.1:/file .

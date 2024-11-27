@@ -8,6 +8,7 @@
 # libssl.so.111 libcyrpto.so.111 miss for git
 # so use 13.3
 # 13.3 pkg boot ok
+# 13.3 pkg have most 13774 packages; 14 only 548 
 
 # ssh -p3322 root@127.0.0.1
 # scp -P 3322 root@127.0.0.1:/file .

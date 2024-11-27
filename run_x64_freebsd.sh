@@ -108,10 +108,13 @@
 #  -netdev user,id=vmnic,hostfwd=tcp::2222-:22,hostfwd=tcp::7777-:7777,hostfwd=tcp::7778-:7778 \
 #  -device virtio-net,netdev=vmnic \
 
-
+# for freebsd
+# source
 # qemu-img resize FreeBSD-14.1-RELEASE-amd64.qcow2 +19G
 # mkdir -p /usr/local/etc/pkg/repos
 # echo 'FressBSD:{url:"https://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/latest",mirror_type:"NONE"}' > /usr/local/etc/pkg/repos/FreeBSD.conf
+
+# bigger
 #sysctl -n hw.logicalcpu
 # qemu-img info FreeBSD-14.1-RELEASE-amd64.qcow2
 # gpart recover vtbd0
@@ -120,15 +123,16 @@
 # growfs /dev/vtbd0p4 # for ufs
 # service growfs onestart
 # zpool online -e root /dev/vtbd0p4 # for zfs
-# /etc/rc.d/sshd sshd_enable=YES
-# /etc/ssh/sshd_config RootLogin yes
+
+# ssh
+# /etc/rc.conf sshd_enable=YES
+# /etc/ssh/sshd_config PermitRootLogin yes
 # /etc/rc.d/sshd onestart
 # su -
 # passwd
 # ssh -p2222 root@127.0.0.1
 # scp -P 5555 root@127.0.0.1:/file .
 
-# for freebsd
 # optimized cpu speed for local develop in target architecture OS
 # login: ssh root@127.0.0.1 -p 2222
 qemu-system-x86_64  \

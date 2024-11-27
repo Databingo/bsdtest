@@ -43,3 +43,13 @@ qemu-system-riscv64 \
 # cd build
 # ../cofigure
 # make
+
+# pkg for riscv64
+# fetch http://lonesome.com/FreeBSD/FreeBSD:13:riscv64/latest/Latest/pkg.txz
+# tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
+
+# create /usr/local/etc/pkg.conf:
+# ABI = "FreeBSD:13:riscv64"
+
+# or add in ~/.shrc and run . ~/.shrc :
+# alias pkg='/usr/local/projects/bin/pkg-static -o ABI=FreeBSD:13:riscv64'

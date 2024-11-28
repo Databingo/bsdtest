@@ -44,7 +44,7 @@ echo '
 #fetch http://github.com/freebsd/freebsd-ports/archive/refs/heads/main.zip
 #tar -xf main.zip -C /usr
 #cd /usr/ports && make fetchindex
-# then make install clean the newest pkg and git, golang
+# then cd /usr/ports/lang/go123 make install clean will install go and dependences pkg 
 
 # bigger
 # !raw extend before the first time boot will automatically exteng file system

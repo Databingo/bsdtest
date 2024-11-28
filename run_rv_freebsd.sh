@@ -10,6 +10,7 @@
 # 13.3 pkg boot ok
 # 13.3 pkg have most 13774 packages; 14 only 548 
 # If pkg not work well havt to use ports, we can still choose 14.1-release-zfs
+# or ports make pkg and with pkg since 13.3 has many packages
 
 # ssh -p3322 root@127.0.0.1
 # scp -P 3322 root@127.0.0.1:/file .

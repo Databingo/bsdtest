@@ -36,8 +36,15 @@ echo '
 
 #. ~/.shrc
 
+
 #pkg install tmux
 #pkg install git
+
+# or just use ports:
+#fetch http://github.com/freebsd/freebsd-ports/archive/refs/heads/main.zip
+#tar -xf main.zip -C /usr
+#cd /usr/ports && make fetchindex
+# then make install clean the newest pkg and git, goang
 
 # bigger
 # !raw extend before the first time boot will automatically exteng file system

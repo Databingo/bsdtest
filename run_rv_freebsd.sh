@@ -24,9 +24,9 @@ qemu-system-riscv64 \
   -smp 2 \
   -bios opensbi-1.5.1-rv-bin/share/opensbi/lp64/generic/firmware/fw_jump.bin \
   -kernel u-boot.bin \
-  -drive file=FreeBSD-13.3-RELEASE-riscv-riscv64.raw,format=raw,id=hd0 \
+  -drive file=FreeBSD-14.1-RELEASE-riscv-riscv64-zfs.raw,format=raw,id=hd0 \
   -device virtio-blk-pci,drive=hd0 \
-  -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777,guestfwd=tcp:10.0.2.15:7890-tcp:127.0.0.1:7890 \
+  -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777 \
   -device virtio-net-device,netdev=net0 \
   -nographic \
  #-monitor none &

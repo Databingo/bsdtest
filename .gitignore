@@ -4,3 +4,4 @@ FreeBSD-*
 FreeBSD*
 QEMU_EFI.fd
 new10G.img
+*.zip

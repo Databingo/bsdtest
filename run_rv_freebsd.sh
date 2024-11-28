@@ -12,6 +12,8 @@
 # If pkg not work well havt to use ports, we can still choose 14.1-release-zfs
 # or ports make pkg and with pkg since 13.3 has many packages
 # pkg install git and port install go
+# but 13.3 new build pkg not work 
+# back to 14.1-zfs with pure ports
 
 # ssh -p3322 root@127.0.0.1
 # scp -P 3322 root@127.0.0.1:/file .

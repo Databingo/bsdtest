@@ -29,13 +29,13 @@ qemu-system-riscv64 \
   -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777 \
   -device virtio-net-device,netdev=net0 \
   -nographic \
- #-monitor none &
+  -monitor none &
 
 # ssh
 # /etc/rc.conf sshd_enable="YES"
 # /etc/ssh/sshd_config PermitRootLogin yes
 # /etc/rc.d/sshd onestart
-# passwd
+# passwd 07*3
 # scp -P 3322 init_bsd.sh root@127.0.0.1:/root
 
 # see init_bsd.sh for more operations

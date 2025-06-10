@@ -1,4 +1,5 @@
 # toolchains.bootlin.com/downloads for minimal linux
+# macos 11 install qemu-8.2.2 works
 
 # download.freebsd.org/releases
 # 14 have riscv64 version

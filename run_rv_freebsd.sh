@@ -29,8 +29,9 @@ qemu-system-riscv64 \
   -device virtio-blk-pci,drive=hd0 \
   -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777 \
   -device virtio-net-device,netdev=net0 \
-  -nographic \
-  -monitor none &
+  -nographic #\
+# -serial stdio
+# -monitor none &
 
 # ssh
 # /etc/rc.conf sshd_enable="YES"

@@ -45,3 +45,4 @@ qemu-system-riscv64 \
 # scp -P 3322 file root@127.0.0.1:/usr/local/projects/
 
 # see init_bsd.sh for more operations
+# may need set vim vimrc sh shrc

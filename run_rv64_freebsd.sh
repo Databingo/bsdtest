@@ -41,6 +41,7 @@ qemu-system-riscv64 \
 
 # use ssh
 # ssh -p3322 root@127.0.0.1
+# change pubkey in ~/.ssh/known_hosts if reset image
 # scp -P 3322 root@127.0.0.1:/file .
 # scp -P 3322 file root@127.0.0.1:/usr/local/projects/
 

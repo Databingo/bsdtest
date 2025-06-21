@@ -14,21 +14,21 @@
 # or ports make pkg and with pkg since 13.3 has many packages
 # pkg install git and port install go
 # but 13.3 new build pkg not work 
-# back to 14.1-zfs with pure ports (conclusion: 14-zfs+port+raw?) (qcow2 meet permitt busy problem)
+# back to 14.1-zfs with pure ports (conclusion: 14-zfs+port+raw?) (qcow2 meet permit&busy problem:becasue tar -x pkg have to be named pkg-static)
 
-# qemu-img resize *.qcow2 +20G
+# qemu-img resize *.raw +20G
 qemu-system-riscv64 \
   -machine virt \
   -m 3G \
   -smp 4 \
   -bios opensbi-1.6-rv-bin/share/opensbi/lp64/generic/firmware/fw_jump.bin \
   -kernel u-boot.bin \
-  -drive file=FreeBSD-14.3-RELEASE-riscv-riscv64-zfs.qcow2,id=hd0,if=none \
+  -drive file=FreeBSD-14.3-RELEASE-riscv-riscv64-zfs.raw,format=raw,id=hd0 \
   -device virtio-blk-pci,drive=hd0 \
   -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777 \
   -device virtio-net-device,netdev=net0 \
-  -nographic &  # after set sshd
-# -nographic # first time set sshd
+  -nographic # first time set sshd
+# -nographic &  # after set sshd
 
 # gpart show # see freebsd-zfs the size, if not automatically extended, follow init_*.sh
  

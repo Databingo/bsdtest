@@ -4,17 +4,17 @@
 # download.freebsd.org/releases
 # 14 have riscv64 version
 # 14 have zfs version
-# 14 pkg have some unoffical support 
-# so 14.1 release
+# 14 pkg have some unoffical support:lonesome
+# so use 14.1 release
 # libssl.so.111 libcyrpto.so.111 miss for git
 # so use 13.3
 # 13.3 pkg boot ok
-# 13.3 pkg have most 13774 packages; 14 only 548 
+# 13.3 pkg have most 13774 packages; 14 only 548(now 17000+ 2025.6.21) 
 # If pkg not work well havt to use ports, we can still choose 14.1-release-zfs
 # or ports make pkg and with pkg since 13.3 has many packages
 # pkg install git and port install go
 # but 13.3 new build pkg not work 
-# back to 14.1-zfs with pure ports
+# back to 14.1-zfs with pure ports (conclusion: 14-zfs+port+raw?) (qcow2 meet permitt busy problem)
 
 # qemu-img resize *.qcow2 +20G
 qemu-system-riscv64 \

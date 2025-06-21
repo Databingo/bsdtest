@@ -16,9 +16,6 @@
 # but 13.3 new build pkg not work 
 # back to 14.1-zfs with pure ports
 
-# ssh -p3322 root@127.0.0.1
-# scp -P 3322 root@127.0.0.1:/file .
-# scp -P 3322 file root@127.0.0.1:/usr/local/projects/
 # qemu-img resize *.qcow2 +20G
 qemu-system-riscv64 \
   -machine virt \
@@ -33,11 +30,18 @@ qemu-system-riscv64 \
   -nographic # first time set sshd
 # -nographic &  # after set sshd
 
-# ssh
+# gpart show # see freebsd-zfs the size, if not automatically extended, follow init_*.sh
+ 
+# set ssh
 # /etc/rc.conf sshd_enable="YES"
 # /etc/ssh/sshd_config PermitRootLogin yes
 # /etc/rc.d/sshd onestart
 # passwd 07*3
 # scp -P 3322 init_bsd.sh root@127.0.0.1:/root
+
+# use ssh
+# ssh -p3322 root@127.0.0.1
+# scp -P 3322 root@127.0.0.1:/file .
+# scp -P 3322 file root@127.0.0.1:/usr/local/projects/
 
 # see init_bsd.sh for more operations

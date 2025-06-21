@@ -20,15 +20,15 @@ echo '
   signature_type: "none",
   enabled: no
  }' > /usr/local/etc/pkg/repos/FreeBSD.conf
-# or
-# static
+
+# pkg static
 #fetch http://lonesome.com/FreeBSD/FreeBSD:13:riscv64/latest/Latest/pkg.txz
-#tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
-#mv pkg-static /usr/local/projects/bin/
+#tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg"
+#mv pkg /usr/local/projects/bin/
 # create /usr/local/etc/pkg.conf:
-# ABI = "FreeBSD:13:riscv64"
+# ABI = "FreeBSD:13:riscv64" ?
 # or add in ~/.shrc and run . ~/.shrc :
-#echo "alias pkg='/usr/local/projects/bin/pkg-static'" >> ~/.shrc
+#echo "alias pkg='/usr/local/projects/bin/pkg'" >> ~/.shrc
 
 #echo "export http_proxy=http://10.0.2.15:7890" >> ~/.shrc
 #echo "export https_proxy=https://10.0.2.15:7890" >> ~/.shrc
@@ -49,6 +49,7 @@ echo '
 # bigger
 # !raw extend before the first time boot will automatically exteng file system
 # qemu-img resize *.qcow2 +19G
+# --------
 # qemu-img info *.qcow2
 # gpart show
 # gpart recover vtbd0 # becasue resize hurt part record

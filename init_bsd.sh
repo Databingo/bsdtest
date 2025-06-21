@@ -24,9 +24,9 @@ echo '
 
 # if libssl.so.111 not found(13 use opensslv1)
 # or pkg static 
-fetch http://lonesome.com/FreeBSD/FreeBSD:13:riscv64/latest/Latest/pkg.txz
-tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg"
-mv pkg /usr/local/projects/bin/
+fetch http://lonesome.com/FreeBSD/FreeBSD:14:riscv64/latest/Latest/pkg.txz
+tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
+mv pkg-static /usr/local/projects/bin/pkg
 # create /usr/local/etc/pkg.conf:
 # ABI = "FreeBSD:13:riscv64" ?
 # or add in ~/.shrc and run . ~/.shrc :

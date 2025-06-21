@@ -27,8 +27,8 @@ qemu-system-riscv64 \
   -device virtio-blk-pci,drive=hd0 \
   -netdev user,id=net0,ipv6=off,hostfwd=tcp::3322-:22,hostfwd=tcp::7777-:7777 \
   -device virtio-net-device,netdev=net0 \
-  -nographic # first time set sshd
-# -nographic &  # after set sshd
+  -nographic &  # after set sshd
+# -nographic # first time set sshd
 
 # gpart show # see freebsd-zfs the size, if not automatically extended, follow init_*.sh
  
@@ -36,7 +36,11 @@ qemu-system-riscv64 \
 # /etc/rc.conf sshd_enable="YES"
 # /etc/ssh/sshd_config PermitRootLogin yes
 # /etc/rc.d/sshd onestart
+ 
+# set passwd
 # passwd 07*3
+
+# set initial sh
 # scp -P 3322 init_bsd.sh root@127.0.0.1:/root
 
 # use ssh

@@ -4,7 +4,7 @@
 
 #More space potentail
 #qemu-img resize xx.qcow2 +19G
-#qemu-img create -f qcow2 new10G.img 10G
+#qemu-img create -f qcow2 new10G.img 20G
 
 #sysctl -a|grep brand
 #machdep.cpu.brand: 0

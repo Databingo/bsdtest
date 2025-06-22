@@ -39,7 +39,7 @@ echo "alias pkg='/usr/local/projects/bin/pkg'" >> ~/.shrc
 
 . ~/.shrc
 
-#pkg install vim-tiny
+#pkg install -y vim-tiny
 #echo "set -o vi" >> ~/.shrc
 #echo "alias vi='vim'" >> ~/.shrc   
 

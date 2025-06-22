@@ -24,14 +24,14 @@ echo '
 
 # (freebsd13 use opensslv1)
 # or pkg static 
-#fetch http://lonesome.com/FreeBSD/FreeBSD:14:riscv64/latest/Latest/pkg.txz
-#tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
-#mv pkg-static /usr/local/projects/bin/pkg
+fetch http://lonesome.com/FreeBSD/FreeBSD:14:riscv64/latest/Latest/pkg.txz
+tar xf ./pkg.txz -s ",/.*/,,g" "*/pkg-static"
+mv pkg-static /usr/local/projects/bin/pkg
 # create /usr/local/etc/pkg.conf:
 # ABI = "FreeBSD:13:riscv64" ?
 # or add in ~/.shrc and run . ~/.shrc :
-#echo "export PATH=$PATH:/usr/local/projects/bin/" >> ~/.shrc
-#echo "alias pkg='/usr/local/projects/bin/pkg'" >> ~/.shrc
+echo "export PATH=$PATH:/usr/local/projects/bin/" >> ~/.shrc
+echo "alias pkg='/usr/local/projects/bin/pkg'" >> ~/.shrc
 
 #echo "export http_proxy=http://10.0.2.15:7890" >> ~/.shrc
 #echo "export https_proxy=https://10.0.2.15:7890" >> ~/.shrc
@@ -39,14 +39,15 @@ echo '
 
 . ~/.shrc
 
+#pkg install vim-tiny
+#echo "set -o vi" >> ~/.shrc
+#echo "alias vi='vim'" >> ~/.shrc   
+
+#. ~/.shrc
 
 #pkg install tmux
 #pkg install git
-#pkg install vim-tiny
-echo "set -o vi" >> ~/.shrc
-echo "alias vi='vim'" >> ~/.shrc   
 
-. ~/.shrc
 # or just use ports:
 #fetch http://github.com/freebsd/freebsd-ports/archive/refs/heads/main.zip
 #tar -xf main.zip -C /usr
